@@ -7,8 +7,6 @@ adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.1.1] - 2023-03-28
 
-Initial release.
-
 ### Fixed
 
 - README maze image link

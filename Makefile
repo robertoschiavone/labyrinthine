@@ -18,4 +18,5 @@ uninstall:
 
 .PHONY: install
 install:
+	python -m build
 	pip install .

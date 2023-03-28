@@ -2,7 +2,7 @@
 
 A no-dependency library that generates all the mazes you need.
 
-![maze](maze.png)
+![maze](https://raw.githubusercontent.com/robertoschiavone/labyrinthine/master/maze.png)
 
 ## Installation
 

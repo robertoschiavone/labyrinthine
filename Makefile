@@ -14,7 +14,7 @@ clean:
 
 .PHONY: uninstall
 uninstall:
-	pip uninstall labyrinthine
+	pip uninstall $(PROJECT)
 
 .PHONY: install
 install:

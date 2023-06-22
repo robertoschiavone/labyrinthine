@@ -4,7 +4,7 @@ from types import NoneType
 from typing import List, Tuple, Union
 
 
-def compute_neighbors(matrix: List[List[int]], cell: Tuple[int, int]) -> list[int]:
+def compute_neighbors(matrix: List[List[int]], cell: Tuple[int, int]) -> List[int]:
     result = []
     x, y = cell
     max_width, max_height = len(matrix), len(matrix[0])

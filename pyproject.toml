@@ -1,6 +1,6 @@
 [project]
 name = "labyrinthine"
-version = "0.1.10"
+version = "0.1.11"
 description = """A no-dependency library to generate mazes."""
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.5"

@@ -1,10 +1,10 @@
 import random
 
-from types import NoneType
-from typing import List, Tuple, Union
+from typing import List, Tuple
 
 
-def compute_neighbors(matrix: List[List[int]], cell: Tuple[int, int]) -> List[int]:
+def compute_neighbors(matrix: List[List[int]], cell: Tuple[int, int]) \
+        -> List[int]:
     result = []
     x, y = cell
     max_width, max_height = len(matrix), len(matrix[0])
@@ -33,8 +33,7 @@ def compute_wall(a: Tuple[int, int], b: Tuple[int, int]) -> Tuple[int, int]:
 
 
 def depth_first(size: int | Tuple[int, int], start: Tuple[int, int] = (0, 0),
-                seed: Union[NoneType, int, float, str, bytes, bytearray] = None) \
-        -> List[List[int]]:
+                seed: int | None = None) -> List[List[int]]:
     if isinstance(size, int):
         size = (size, size)
 
@@ -44,26 +43,26 @@ def depth_first(size: int | Tuple[int, int], start: Tuple[int, int] = (0, 0),
     maze = [[1 for _ in range(width)] for _ in range(height)]
     stack = []
 
-    # 1. Choose the initial cell, mark it as visited and push it to the stack
+    # 1. choose the initial cell, mark it as visited and push it to the stack
     cell = start
     maze[cell[0]][cell[1]] = 0
 
     stack += [cell]
-    # 2. While the stack is not empty
+    # 2. while the stack is not empty
     while stack:
-        # 1. Pop a cell from the stack and make it a current cell
+        # 1. pop a cell from the stack and make it a current cell
         cell = stack.pop()
         neighbors = compute_neighbors(maze, cell)
-        # 2. If the current cell has any neighbours which have not been visited
+        # 2. if the current cell has any neighbours which have not been visited
         if neighbors:
-            # 1. Push the current cell to the stack
+            # 1. push the current cell to the stack
             stack += [cell]
-            # 2. Choose one of the unvisited neighbours
+            # 2. choose one of the unvisited neighbours
             neighbor = random.choice(neighbors)
-            # 3. Remove the wall between the current cell and the chosen cell
+            # 3. remove the wall between the current cell and the chosen cell
             wall = compute_wall(cell, neighbor)
             maze[wall[0]][wall[1]] = 0
-            # 4. Mark the chosen cell as visited and push it to the stack
+            # 4. mark the chosen cell as visited and push it to the stack
             maze[neighbor[0]][neighbor[1]] = 0
             stack += [neighbor]
 
